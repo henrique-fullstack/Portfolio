@@ -1,0 +1,1 @@
+// TODO: Map through projectsData and render project cards using official React docs pattern
