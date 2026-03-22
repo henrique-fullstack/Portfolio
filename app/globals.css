@@ -1,3 +1,50 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* 1. MAPEAMENTO DE CORES (O segredo para o erro sumir) */
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+}
+
+/* 2. DEFINIÇÃO DAS VARIÁVEIS HSL */
+@layer base {
+  :root {
+    /* MODO CLARO - Limpo e com foco no azul */
+    --background: 0 0% 100%; /* Branco */
+    --foreground: 222 47% 11%; /* Azul Marinho quase preto */
+    
+    --card: 210 40% 98%; /* Azul claríssimo para os cards */
+    --card-foreground: 222 47% 11%;
+    
+    --primary: 221 83% 53%; /* O Azul da Rosa (Vibrante) */
+    --primary-foreground: 210 40% 98%;
+    
+    --border: 214 32% 91%; /* Cinza azulado para bordas */
+  }
+
+  .dark {
+    /* MODO ESCURO - Profundo como o espaço */
+    --background: 222 47% 4%; /* Azul marinho ultra escuro */
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 7%; /* Um tom acima do fundo */
+    --card-foreground: 210 40% 98%;
+    
+    --primary: 217 91% 60%; /* Azul um pouco mais aberto para contraste */
+    --primary-foreground: 222 47% 4%;
+    
+    --border: 217 19% 27%;
+  }
+}
+
+/* 3. APLICAÇÃO GLOBAL */
+@layer base {
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+}

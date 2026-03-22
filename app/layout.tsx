@@ -1,22 +1,24 @@
-import type { Metadata } from "next";
-import "./globals.css";
-
-export const metadata: Metadata = {
-  title: "Kaiser Portfolio",
-  description: "Developer passionate about innovative solutions",
-};
+// app/layout.tsx
+import './globals.css' // Certifique-se de que o Tailwind está importado aqui
+import { ThemeProvider } from '../src/components/ThemeProvider'
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br">
-      {/* Adicionei suas cores de fundo e texto aqui no body */}
-      <body className="bg-[#222831] text-white antialiased font-sans">
-        {children}
+    // Adicionamos 'suppressHydrationWarning' porque o next-themes modifica a tag <html>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider 
+          attribute="class" // Essencial para o Tailwind dark: funcionar
+          defaultTheme="system" // Começa com o tema do PC do usuário
+          enableSystem
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

@@ -3,7 +3,7 @@ interface Project {
   title: string;
   description: string;
   technologies: string[];
-  imageUrl: string;
+  imageUrl?: string;
   projectUrl: string;
   featured: boolean;
 }
