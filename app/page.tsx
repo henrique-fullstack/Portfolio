@@ -1,7 +1,7 @@
 // app/page.tsx
 import Header from '../src/components/Header';
 import SkillsList from '../src/components/SkillsList';
-import ProjectCard from '../src/components/ProjectCard';
+import ProjectList from '../src/components/ProjectList';
 
 export default function Home() {
   return (
@@ -36,7 +36,12 @@ export default function Home() {
           <SkillsList />
         </section>
 
-       
+        <section id="projects" className="w-full">
+          <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">
+            My <span className="text-primary">Projects</span>
+          </h2>
+          <ProjectList />
+        </section>
       </main>
     </>
   );
