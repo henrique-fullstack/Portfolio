@@ -6,7 +6,7 @@ const project: Project[] = [
     title: 'Finance Manager Pro',
     description: 'System for managing personal finances, including income, expenses, and financial reports.',
     technologies: ['Python', 'SQLite'],
-    imageUrl: '',
+    imageUrl: '/skills/python.svg',
     projectUrl: 'https://github.com/henrique-fullstack/Kaiser-finance-manager.git',
     featured: true,
   },
