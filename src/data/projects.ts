@@ -4,9 +4,9 @@ const project: Project[] = [
   {
     id: 'finance-manager',
     title: 'Finance Manager Pro',
-    description: 'Sistema de gestão financeira com análise de dados em Python.',
+    description: 'System for managing personal finances, including income, expenses, and financial reports.',
     technologies: ['Python', 'SQLite'],
-    imageUrl: '/anaconda.svg',
+    imageUrl: '',
     projectUrl: 'https://github.com/henrique-fullstack/Kaiser-finance-manager.git',
     featured: true,
   },
