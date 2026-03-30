@@ -56,6 +56,12 @@ const skills: Skill[] = [
     imageUrl: '/skills/fastapi.svg',
   },
   {
+    id:  'pandas',
+    name: 'Pandas',
+    ability: 'Intermediate',
+    imageUrl: '/skills/pandas.svg',
+  },
+  {
     id: 'sqlite',
     name: 'SQLite',
     ability: 'Intermediate',
