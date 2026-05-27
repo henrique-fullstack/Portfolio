@@ -30,7 +30,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           rel="noopener noreferrer"
           className="text-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
         >
-          See on GitHub
+          See on {project.whereSee === 'site' ? 'site' : 'GitHub'}
         </a>
       </div>
     </div>

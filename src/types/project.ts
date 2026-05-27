@@ -3,6 +3,7 @@ interface Project {
   title: string;
   description: string;
   technologies: string[];
+  whereSee: 'GitHub' | 'site';
   imageUrl?: string;
   projectUrl: string;
   featured: boolean;
