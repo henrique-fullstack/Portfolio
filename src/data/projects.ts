@@ -15,7 +15,7 @@ const project: Project[] = [
   {
     id: 'portfolio-psicologo',
     title: 'Portfolio Psychologist',
-    description: 'Site for portfolio of the psychologist',
+    description: 'Professional Landing Page – Portfólio for Psicólogo',
     whereSee: 'site',
     technologies: ['Next.js', 'Tailwind', 'TypeScript'],
     imageUrl: '/projects/DrCarlosAlberto.png',
