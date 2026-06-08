@@ -4,7 +4,7 @@ import { fadeOnUp, staggerContainer } from '@/lib/animations';
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col justify-center px-6 py-12 md:px-24 bg-zinc-950 text-zinc-50 overflow-hidden">
+  <section id="hero" className="relative flex min-h-screen flex-col justify-center px-6 py-12 md:px-24 bg-zinc-950 text-zinc-50 overflow-hidden">
       {/* Detail of background light */}
       <div className="absolute top-1/4 left-1/4 -z-10 h-[300px] w-[300px] rounded-full bg-sky-500/10 blur-[120px] pointer-events-none md:h-[500px] md:w-[500px]" />
 
