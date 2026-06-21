@@ -40,7 +40,7 @@ export default function Hero() {
         >
           I build robust, logical, and scalable architectures. Specialist in 
           transforming complex problems into clean, efficient systems using 
-          Python, Next.js, and TypeScript.
+          Nest.js, Next.js, and TypeScript.
         </motion.p>
 
         {/* Call to Action (Buttons) */}
