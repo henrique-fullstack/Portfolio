@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
-import { fadeOnUp, staggerContainer } from '@/lib/animations'; 
+import { fadeOnUp, pressableBehavior, staggerContainer } from '@/lib/animations'; 
+import { scrollToSection } from '@/lib/utils';
 
 export default function Hero() {
   return (
@@ -48,19 +49,20 @@ export default function Hero() {
           variants={fadeOnUp}
           className="flex flex-wrap gap-4 pt-4"
         >
-          <a 
-            href="#projects" 
-            className="group relative inline-flex items-center justify-center overflow-hidden rounded-md bg-zinc-50 px-6 py-3 text-sm font-medium text-zinc-950 transition-all duration-300 hover:bg-zinc-200"
-          >
-            View Projects
-          </a>
+          <motion.a href="#projects" 
+          className="inline-flex items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/50 px-6 py-3 text-sm font-medium text-zinc-300 backdrop-blur-sm" 
+          onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} 
+          {...pressableBehavior}>
+          Projects
+          </motion.a>
           
-          <a 
-            href="#contact" 
-            className="inline-flex items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/50 px-6 py-3 text-sm font-medium text-zinc-300 backdrop-blur-sm transition-all duration-300 hover:bg-zinc-900 hover:text-zinc-50 hover:border-zinc-700"
+          <motion.a href="#contact" 
+            className="inline-flex items-center justify-center rounded-md border border-zinc-800 bg-zinc-900/50 px-6 py-3 text-sm font-medium text-zinc-300 backdrop-blur-sm"
+            onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} 
+            {...pressableBehavior}
           >
             Get in Touch
-          </a>
+          </motion.a>
         </motion.div>
       </motion.div>
 

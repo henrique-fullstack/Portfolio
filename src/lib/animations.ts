@@ -1,4 +1,4 @@
-import { Variants } from "framer-motion";
+import { HTMLMotionProps, Variants } from "framer-motion";
 
 export const fadeOnDown: Variants = {
     initial: {
@@ -36,4 +36,10 @@ export const staggerContainer: Variants = {
             staggerChildren: 0.1,
         },
     },
+};
+
+export const pressableBehavior: HTMLMotionProps<'a'> = {
+  whileHover: { scale: 1.05, y: -1 },
+  whileTap: { scale: 0.95 },
+  transition: { type: "spring", stiffness: 400, damping: 15 }
 };

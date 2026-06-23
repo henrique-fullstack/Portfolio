@@ -5,7 +5,7 @@ import CoreStacks from './StackCore';
 export default function About() {
   return (
     <section 
-      id="about" 
+      id="aboutme" 
       className="relative flex min-h-screen flex-col justify-center px-6 py-12 md:px-24 bg-zinc-950 text-zinc-50 overflow-hidden"
     >
       {/* Detalhe de luz */}
@@ -17,7 +17,7 @@ export default function About() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-4xl space-y-6"
         >
@@ -34,7 +34,7 @@ export default function About() {
       <motion.div 
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
         className="lg:col-span-8 lg:col-start-1 space-y-8"
       >

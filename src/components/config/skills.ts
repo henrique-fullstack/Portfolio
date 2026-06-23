@@ -2,24 +2,25 @@ import { Skill } from '../types/skill';
 
 export const skillsData: Skill[] = [
     // Frontend
-    { name: 'HTML', icon: '/icons/html5.svg', level: 'advanced', isCore: false, category: 'frontend' },
-    { name: 'CSS', icon: '/icons/css3.svg', level: 'advanced', isCore: false, category: 'frontend' },
-    { name: 'JavaScript', icon: '/icons/javascript.svg', level: 'advanced', isCore: false, category: 'frontend' },
-    { name: 'Tailwind CSS', icon: '/icons/tailwind.svg', level: 'advanced', isCore: true, category: 'frontend' },
-    { name: 'TypeScript', icon: '/icons/typescript.svg', level: 'advanced', isCore: true, category: 'frontend' },
-    { name: 'React', icon: '/icons/react.svg', level: 'advanced', isCore: false, category: 'frontend' },
-    { name: 'Next.js', icon: '/icons/nextjs.svg', level: 'advanced', isCore: true, category: 'frontend' },
+    { name: 'HTML', icon: 'SiHtml5', level: 'advanced', isCore: false, category: 'frontend' },
+    { name: 'CSS', icon: 'SiCss', level: 'advanced', isCore: false, category: 'frontend' },
+    { name: 'JavaScript', icon: 'SiJavascript', level: 'advanced', isCore: false, category: 'frontend' },
+    { name: 'Tailwind CSS', icon: 'SiTailwindcss', level: 'advanced', isCore: true, category: 'frontend' },
+    { name: 'TypeScript', icon: 'SiTypescript', level: 'advanced', isCore: true, category: 'frontend' },
+    { name: 'React', icon: 'SiReact', level: 'advanced', isCore: false, category: 'frontend' },
+    { name: 'Next.js', icon: 'SiNextdotjs', level: 'advanced', isCore: true, category: 'frontend' },
 
     // Backend
-    { name: 'Python', icon: '/icons/python.svg', level: 'advanced', isCore: false, category: 'backend' },
-    { name: 'FastAPI', icon: '/icons/fastapi.svg', level: 'advanced', isCore: false, category: 'backend' },
-    { name: 'Node.js', icon: '/icons/nodejs.svg', level: 'advanced', isCore: false, category: 'backend' },
-    { name: 'Nest.js', icon: '/icons/nestjs.svg', level: 'advanced', isCore: true, category: 'backend' },
-    { name: 'Express', icon: '/icons/express.svg', level: 'advanced', isCore: false, category: 'backend' },
+    { name: 'Python', icon: 'SiPython', level: 'advanced', isCore: false, category: 'backend' },
+    { name: 'FastAPI', icon: 'SiFastapi', level: 'intermediate', isCore: false, category: 'backend' },
+    { name: 'Node.js', icon: 'SiNodedotjs', level: 'intermediate', isCore: false, category: 'backend' },
+    { name: 'Express', icon: 'SiExpress', level: 'intermediate', isCore: false, category: 'backend' },
+    { name: 'Nest.js', icon: 'SiNestjs', level: 'intermediate', isCore: true, category: 'backend' },
 
     // Database and Tools
-    { name: 'SQLite', icon: '/icons/sqlite.svg', level: 'intermediate', isCore: false, category: 'database' },
-    { name: 'PostgreSQL', icon: '/icons/postgresql.svg', level: 'intermediate', isCore: false, category: 'database' },
-    { name: 'Docker', icon: '/icons/docker.svg', level: 'intermediate', isCore: false, category: 'tool' },
-    { name: 'Git', icon: '/icons/git.svg', level: 'intermediate', isCore: false, category: 'tool' },
+    { name: 'SQLite', icon: 'SiSqlite', level: 'intermediate', isCore: false, category: 'database' },
+    { name: 'PostgreSQL', icon: 'SiPostgresql', level: 'intermediate', isCore: false, category: 'database' },
+    { name: 'Docker', icon: 'SiDocker', level: 'intermediate', isCore: false, category: 'tool' },
+    { name: 'Git', icon: 'SiGit', level: 'intermediate', isCore: false, category: 'tool' },
+    { name: 'GitHub', icon: 'SiGithub', level: 'intermediate', isCore: false, category: 'tool' },
 ]

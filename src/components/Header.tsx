@@ -1,8 +1,11 @@
 "use client";
 import { motion } from 'framer-motion';
-import { fadeOnDown } from '@/lib/animations'; // Importando a variante que criamos
+import { fadeOnDown, pressableBehavior } from '@/lib/animations';
+import { scrollToSection } from '@/lib/utils';
 
 export default function Header() {
+  
+
   return (
     <motion.header
       variants={fadeOnDown}
@@ -19,21 +22,39 @@ export default function Header() {
 
       {/* Navegação Minimalista */}
       <nav className="hidden md:flex items-center gap-8 text-sm font-medium font-mono text-zinc-400">
-        <a href="#hero" className="hover:text-zinc-50 transition-colors duration-300">Home</a>
-        <a href="#about" className="hover:text-zinc-50 transition-colors duration-300">About</a>
-        <a href="#projects" className="hover:text-zinc-50 transition-colors duration-300">Projects</a>
-        <a href="#contact" className="hover:text-zinc-50 transition-colors duration-300">Contact</a>
+        <motion.a href="#hero" 
+        className="hover:text-zinc-50 transition-colors duration-300" 
+       onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
+        {...pressableBehavior}
+        >Home</motion.a>
+        
+        <motion.a href="#aboutme" 
+        className="hover:text-zinc-50 transition-colors duration-300" 
+        onClick={(e) => { e.preventDefault(); scrollToSection('aboutme'); }}
+        {...pressableBehavior}
+        >About</motion.a>
+        
+        <motion.a href="#skills" 
+        className="hover:text-zinc-50 transition-colors duration-300" 
+        onClick={(e) => { e.preventDefault(); scrollToSection('skills'); }}
+        {...pressableBehavior}
+          >Skills</motion.a>
+        
+        <motion.a href="#projects" 
+        className="hover:text-zinc-50 transition-colors duration-300" 
+        onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} 
+        {...pressableBehavior}>
+          Projects
+        </motion.a>
+        
+        <motion.a href="#contact" 
+        className="hover:text-zinc-50 transition-colors duration-300" 
+        onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} 
+        {...pressableBehavior}>
+          Contact
+        </motion.a>
       </nav>
 
-      {/* Botão de Ação / CTA Direito */}
-      <div>
-        <a 
-          href="#contact" 
-          className="rounded-md border border-zinc-800 bg-zinc-900/40 px-4 py-2 text-xs font-mono tracking-wider text-zinc-300 backdrop-blur-sm transition-all duration-300 hover:bg-zinc-900 hover:text-zinc-50 hover:border-sky-500/50"
-        >
-          Resume
-        </a>
-      </div>
     </motion.header>
   );
 }
