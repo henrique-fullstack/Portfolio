@@ -1,35 +1,60 @@
-import React from 'react';
-import { ThemeToggle } from './ThemeToggle';
+"use client";
+import { motion } from 'framer-motion';
+import { fadeOnDown, pressableBehavior } from '@/lib/animations';
+import { scrollToSection } from '@/lib/utils';
 
 export default function Header() {
+  
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm transition-colors duration-300">
-      <div className="container mx-auto px-6 h-16 flex justify-between items-center">
-        
-        <h1 className="text-2xl font-bold tracking-tighter italic text-primary">
-          HENRIQUE.DEV
-        </h1>
-        
-        <div className="flex items-center gap-6">
-          <nav className="hidden md:block"> 
-            <ul className="flex space-x-6 text-sm font-medium text-muted-foreground">
-              <li><a href="#home" className="hover:text-primary transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
-              <li><a href="#skills" className="hover:text-primary transition-colors">Skills</a></li>
-              <li><a href="#projects" className="hover:text-primary transition-colors">Projects</a></li>
-              <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
-            </ul>
-          </nav>
-          
-          <div className="border-l border-border pl-6 ml-2 hidden md:block">
-            <ThemeToggle />
-          </div>
-          
-          <div className="md:hidden">
-             <ThemeToggle />
-          </div>
-        </div>
+    <motion.header
+      variants={fadeOnDown}
+      initial="initial"
+      animate="animate"
+      className="fixed top-0 left-0 right-0 z-50 flex h-16 items-center justify-between px-6 md:px-24 bg-zinc-950/70 backdrop-blur-md border-b border-zinc-900 text-zinc-50"
+    >
+      {/* Logo / Name */}
+      <div className="flex items-center gap-2">
+        <a href="#" className="font-mono text-sm tracking-widest uppercase hover:text-sky-400 transition-colors duration-300">
+          Henrique<span className="text-sky-400">.dev</span>
+        </a>
       </div>
-    </header>
+
+      {/* Minimalist Navigation */}
+      <nav className="hidden md:flex items-center gap-8 text-sm font-medium font-mono text-zinc-400">
+        <motion.a href="#hero" 
+        className="hover:text-zinc-50 transition-colors duration-300" 
+       onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
+        {...pressableBehavior}
+        >Home</motion.a>
+        
+        <motion.a href="#aboutme" 
+        className="hover:text-zinc-50 transition-colors duration-300" 
+        onClick={(e) => { e.preventDefault(); scrollToSection('aboutme'); }}
+        {...pressableBehavior}
+        >About</motion.a>
+        
+        <motion.a href="#skills" 
+        className="hover:text-zinc-50 transition-colors duration-300" 
+        onClick={(e) => { e.preventDefault(); scrollToSection('skills'); }}
+        {...pressableBehavior}
+          >Skills</motion.a>
+        
+        <motion.a href="#projects" 
+        className="hover:text-zinc-50 transition-colors duration-300" 
+        onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} 
+        {...pressableBehavior}>
+          Projects
+        </motion.a>
+        
+        <motion.a href="#contact" 
+        className="hover:text-zinc-50 transition-colors duration-300" 
+        onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} 
+        {...pressableBehavior}>
+          Contact
+        </motion.a>
+      </nav>
+
+    </motion.header>
   );
 }
