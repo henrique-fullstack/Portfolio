@@ -39,12 +39,13 @@ export default function About() {
         className="lg:col-span-8 lg:col-start-1 space-y-8"
       >
         <p className="max-w-2xl text-lg text-zinc-400 md:text-xl font-light leading-relaxed">
-          The level I have reached today is not a matter of luck, but the result of a relentless pursuit of 
-          resilient architectures. I understand that clean code is the foundation for scaling any international system.
+          My approach to software development is driven by a relentless pursuit of code quality and software engineering principles. 
+          I deep dive into clean code and modularity, understanding that a solid, well-structured foundation is non-negotiable for scaling modern web applications.
         </p>
         <p className="max-w-2xl text-lg text-zinc-400 md:text-xl font-light leading-relaxed">
-          Specializing in the triad of <span className="text-zinc-200 font-semibold">Nest.js, Next.js, and TypeScript</span>, I build 
-          projects where frontend visual fluidity perfectly aligns with raw backend logic.
+          Leveraging the synergy of <span className="text-zinc-200 font-semibold">Next.js, TypeScript and Tailwind CSS</span>, I build 
+          web experiences where visual fluidity perfectly aligns with solid component architecture. 
+          I am continuously expanding my ecosystem into backend engineering to deliver robust, full-stack solutions.
         </p>
 
         <div className="pt-4 max-w-md">

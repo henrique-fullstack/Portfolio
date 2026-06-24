@@ -30,12 +30,12 @@ export default function Contacts() {
           <h3 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
             Direct <span className="text-zinc-500 italic">channels</span>.
           </h3>
-          <p className="text-zinc-400 text-base md:text-lg max-w-xl font-light leading-relaxed">
-            Choice of direct channels to connect with me. Whether you prefer social media, email, or professional networks, I am open to meaningful conversations and collaborations.
-          </p>
-          <p className="text-zinc-400 text-base md:text-lg max-w-xl font-light leading-relaxed">
-            Feel free to reach out through any of the channels below. I look forward to connecting with you!
-          </p>
+         <p className="text-zinc-400 text-base md:text-lg max-w-xl font-light leading-relaxed">
+            Here are the best channels to connect with me. Whether you prefer a quick message, email, or professional networks, I am always open to meaningful conversations and new collaborations.
+         </p>
+         <p className="text-zinc-400 text-base md:text-lg max-w-xl font-light leading-relaxed">
+            Feel free to reach out through any of the links below. I look forward to building something incredible together!
+         </p>
         </motion.div>
 
         {/* Grid of Contact Channels */}
