@@ -8,12 +8,12 @@ export default function About() {
       id="aboutme" 
       className="relative flex min-h-screen flex-col justify-center px-6 py-12 md:px-24 bg-zinc-950 text-zinc-50 overflow-hidden"
     >
-      {/* Detalhe de luz */}
+      {/* Background Light */}
       <div className="absolute top-1/2 right-1/4 -z-10 h-[300px] w-[300px] -translate-y-1/2 rounded-full bg-indigo-500/5 blur-[120px] pointer-events-none md:h-[500px] md:w-[500px]" />
 
       <div className="w-full max-w-7xl">
         
-        {/* TÍTULO */}
+        {/* TITLE */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

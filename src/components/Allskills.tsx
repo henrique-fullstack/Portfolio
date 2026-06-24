@@ -73,7 +73,7 @@ export default function Allskills() {
                   viewport={{ once: true, amount: 0.3 }}
                 >
                   {categorySkills.map((skill) => {
-                    // Mágica do ícone real acontecendo aqui por dentro do loop
+                    // Maps the skill icon name to the actual icon component from react-icons
                     const IconComponent = skill.icon ? icons[skill.icon] : null;
 
                     return (

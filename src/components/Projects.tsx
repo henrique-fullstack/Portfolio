@@ -3,18 +3,18 @@
 import { motion } from 'framer-motion';
 import { projectsData } from './config/projects';
 import * as SiIcons from 'react-icons/si';
-import { FiGithub, FiExternalLink } from 'react-icons/fi'; // Ícones auxiliares legais
+import { FiGithub, FiExternalLink } from 'react-icons/fi'; 
 
 export default function Projects() {
   const icons = SiIcons as Record<string, React.ComponentType<{ className?: string }>>;
 
   return (
     <section id="projects" className="relative flex min-h-screen flex-col justify-center px-6 py-12 md:px-24 bg-zinc-950 text-zinc-50 overflow-hidden">
-      {/* Detalhe visual de blur no fundo oposto ao das skills */}
+      {/* Soft Background Light */}
       <div className="absolute bottom-1/3 left-1/4 -z-10 h-[300px] w-[300px] rounded-full bg-sky-500/5 blur-[120px] pointer-events-none md:h-[500px] md:w-[500px]" />
 
       <div className="w-full max-w-7xl ">
-        {/* Cabeçalho da Seção */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export default function Projects() {
           </h3>
         </motion.div>
 
-        {/* Grid de Projetos */}
+        {/* Grid of Projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projectsData.map((project, index) => (
             <motion.div
@@ -42,10 +42,10 @@ export default function Projects() {
               }`}
             >
               <div>
-                {/* Links superiores */}
+                {/* Upper links */}
                 <div className="flex justify-between items-center mb-6">
                   <div className="text-zinc-500 group-hover:text-sky-400 transition-colors">
-                    {/* Um ícone de pasta genérico simulado com div ou Lucide */}
+                    {/* A generic folder icon simulated with a div or Lucide */}
                     <span className="text-xs font-mono tracking-wider">[ Production ]</span>
                   </div>
                   <div className="flex gap-4 text-zinc-400">
@@ -62,7 +62,7 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Título e Descrição */}
+                {/* Title and Description */}
                 <h4 className="text-xl font-bold mb-3 text-zinc-100 group-hover:text-zinc-50">
                   {project.title}
                 </h4>
@@ -71,22 +71,29 @@ export default function Projects() {
                 </p>
               </div>
 
-              {/* Tecnologias Utilizadas no Projeto */}
-              <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-900">
+             {/* Technologies Used in the Project */}
+            <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-900">
                 {project.techStack.map((tech) => {
-                  // Mapeia strings para os mesmos ícones oficiais que você arrumou nas Skills!
-                  // Exemplo simplificado de busca de string baseada na sua lista
-                  const techIconKey = `Si${tech.replace(/[^a-zA-Z0-0]/g, '')}`;
-                  const Icon = icons[techIconKey] || icons[tech];
+                    // Dictionary to map tech names to their corresponding react-icons component names
+                    const iconMapping: Record<string, string> = {
+                    "Next.js": "SiNextdotjs",
+                    "Tailwind CSS": "SiTailwindcss",
+                    "TypeScript": "SiTypescript",
+                    "Python": "SiPython",
+                    "SQLite": "SiSqlite"
+                    };
 
-                  return (
+                    const techIconKey = iconMapping[tech];
+                    const Icon = icons[techIconKey];
+
+                    return (
                     <span key={tech} className="flex items-center gap-1.5 px-2.5 py-1 bg-zinc-900/60 border border-zinc-800 text-zinc-400 rounded-md text-xs font-medium">
-                      {Icon && <Icon className="w-3.5 h-3.5 text-zinc-400" />}
-                      {tech}
+                        {Icon && <Icon className="w-3.5 h-3.5 text-zinc-400 group-hover:text-sky-400 transition-colors" />}
+                        {tech}
                     </span>
-                  );
+                    );
                 })}
-              </div>
+                </div>
             </motion.div>
           ))}
         </div>

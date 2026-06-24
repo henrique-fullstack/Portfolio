@@ -10,7 +10,7 @@ export default function Skills() {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 w-full">
       {coreSkills.map((skill) => {
-        // Pega o ícone real (ex: SiReact) de dentro do react-icons
+        // Handles the mapping of skill icon names to actual icon components from react-icons
         const IconComponent = skill.icon ? icons[skill.icon] : null;
 
         return (

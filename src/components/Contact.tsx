@@ -6,7 +6,7 @@ import * as FiIcons from 'react-icons/fi';
 import * as SiIcons from 'react-icons/si';
 
 export default function Contacts() {
-  // Unifica os pacotes de ícones para busca dinâmica segura
+  // Unifies the icons from both react-icons libraries into a single object for easier access
   const icons = {
     ...FiIcons,
     ...SiIcons,
@@ -14,11 +14,11 @@ export default function Contacts() {
 
   return (
     <section id="contact" className="relative flex min-h-[70vh] flex-col justify-center px-6 py-12 md:px-24 bg-zinc-950 text-zinc-50 overflow-hidden">
-      {/* Luz de fundo suave */}
+      {/* Soft Background Light */}
       <div className="absolute top-1/3 left-1/4 -z-10 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-500/5 blur-[120px] pointer-events-none md:h-[500px] md:w-[500px]" />
 
       <div className="w-full max-w-7xl">
-        {/* Cabeçalho */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,11 +31,14 @@ export default function Contacts() {
             Direct <span className="text-zinc-500 italic">channels</span>.
           </h3>
           <p className="text-zinc-400 text-base md:text-lg max-w-xl font-light leading-relaxed">
-            Escolha o canal de sua preferência. Estou disponível para propostas, conexões e projetos de código ponta a ponta.
+            Choice of direct channels to connect with me. Whether you prefer social media, email, or professional networks, I am open to meaningful conversations and collaborations.
+          </p>
+          <p className="text-zinc-400 text-base md:text-lg max-w-xl font-light leading-relaxed">
+            Feel free to reach out through any of the channels below. I look forward to connecting with you!
           </p>
         </motion.div>
 
-        {/* Grid de Redes Sociais */}
+        {/* Grid of Contact Channels */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {contactsData.map((channel, index) => {
             const IconComponent = icons[channel.icon];

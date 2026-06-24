@@ -1,11 +1,11 @@
 import { skillsData } from './config/skills';
 
 export default function CoreStacks() {
-  // Filtra apenas as que você marcou como principais (isCore: true)
+  // Filter only the core skills from the skillsData array
   const coreSkills = skillsData.filter(skill => skill.isCore);
 
   return (
-    // grid-cols-2 cria duas colunas perfeitas. gap-3 dá o espaçamento ideal.
+    // grid-cols-2 creates a two-column grid layout, and gap-3 adds spacing between the grid items
     <div className="grid grid-cols-2 gap-3 w-full">
       {coreSkills.map(skill => (
         <div 
