@@ -49,15 +49,13 @@ export default function Hero() {
             variants={fadeOnUp}
             className="flex flex-wrap gap-4 pt-4"
           >
-            {/* Botão de Projetos - Destaque Principal */}
             <motion.a 
               href="#projects" 
               className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-500/10 to-indigo-500/10 hover:from-sky-500/20 hover:to-indigo-500/20 border border-sky-500/20 hover:border-sky-400/40 px-6 py-3 text-sm font-semibold text-sky-400 hover:text-sky-300 shadow-lg shadow-sky-500/5 transition-all duration-300 backdrop-blur-sm" 
               onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} 
               {...pressableBehavior}
             >
-              Browse Projects
-              {/* Ícone que se move para baixo sutilmente no hover do botão */}
+              Projects
               <svg 
                 className="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform duration-300" 
                 fill="none" 
@@ -69,7 +67,6 @@ export default function Hero() {
               </svg>
             </motion.a>
             
-            {/* Botão de Contato - Secundário Elegante */}
             <motion.a 
               href="#contact" 
               className="inline-flex items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900/60 hover:border-zinc-700 px-6 py-3 text-sm font-medium text-zinc-400 hover:text-zinc-200 transition-colors duration-300 backdrop-blur-sm"
