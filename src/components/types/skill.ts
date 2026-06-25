@@ -1,7 +1,6 @@
 export interface Skill {
   name: string;
-  icon?: string; 
-  level?: 'beginner' | 'intermediate' | 'advanced'; 
+  icon?: string;  
   isCore: boolean; 
   category: 'frontend' | 'backend' | 'tool' | 'database'; 
 }

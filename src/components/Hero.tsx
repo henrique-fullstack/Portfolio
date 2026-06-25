@@ -21,7 +21,7 @@ export default function Hero() {
           variants={fadeOnUp}
           className="text-sm font-mono tracking-widest text-sky-400 uppercase md:text-base"
         >
-          [ Full-Stack Developer & Software Architect ]
+          [ Frontend Engineer & Full-Stack Developer ]
         </motion.p>
 
         {/* Main Title */}
@@ -29,9 +29,9 @@ export default function Hero() {
           variants={fadeOnUp}
           className="text-4xl font-extrabold tracking-tight sm:text-6xl md:text-7xl leading-none"
         >
-          Coding order into the <span className="text-zinc-400">backend</span>,
+          Transforming complex designs into <span className="text-zinc-400">clear code</span>,
           <br />
-          building <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">freedom</span> in the world.
+          building <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">high-performance interfaces</span>.
         </motion.h1>
 
         {/* Brief Description */}
@@ -39,9 +39,8 @@ export default function Hero() {
           variants={fadeOnUp}
           className="max-w-xl text-base text-zinc-400 md:text-lg font-light leading-relaxed"
         >
-          I build robust, logical, and scalable architectures. Specialist in 
-          transforming complex problems into clean, efficient systems using 
-          Nest.js, Next.js, and TypeScript.
+          I bridge the gap between design and robust engineering. 
+          Focused on building pixel-perfect, scalable, and highly interactive web applications using Next.js, TypeScript, and modern animation libraries.
         </motion.p>
 
         {/* Call to Action (Buttons) */}

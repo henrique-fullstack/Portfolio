@@ -98,11 +98,6 @@ export default function Allskills() {
                         <p className="text-center font-medium text-xs leading-tight line-clamp-2 text-zinc-200">
                           {skill.name}
                         </p>
-                        {skill.level && (
-                          <p className="text-[10px] text-zinc-500 mt-0.5 capitalize opacity-75">
-                            {skill.level}
-                          </p>
-                        )}
                       </motion.div>
                     );
                   })}
