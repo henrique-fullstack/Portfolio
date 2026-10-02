@@ -1,36 +1,39 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { skillsData } from './config/skills';
-import { Skill } from './types/skill';
-import * as SiIcons from 'react-icons/si'; // Importa os logos reais
+import { site } from '@/config/site'; 
+import { Skill } from '@/types/index';
+import * as FaIcons from 'react-icons/fa';
+import * as SiIcons from 'react-icons/si';
 import { fadeOnUp, staggerContainer } from '@/lib/animations';
 
-const categoryOrder = ['frontend', 'backend', 'database', 'tool'];
+const categoryOrder = ['backend', 'frontend', 'database', 'tool'];
 const categoryLabels: Record<string, string> = {
-  frontend: 'Frontend Development',
   backend: 'Backend Development',
-  database: 'Database & Tools',
-  tool: 'Database & Tools',
+  frontend: 'Frontend Development',
+  database: 'Database',
+  tool: 'Development Tools',
 };
 
 export default function Allskills() {
+  const { sectionTag, titleSectionPrefix, titleSectionHighlight, skills } = site.skills;
   const groupedSkills: Record<string, Skill[]> = {};
-  const icons = SiIcons as Record<string, React.ComponentType<{ className?: string }>>;
+  const icons = { ...SiIcons, ...FaIcons } as Record<string, React.ComponentType<{ className?: string }>>;
 
-  skillsData.forEach((skill) => {
+  skills.forEach((skill) => {
     if (!groupedSkills[skill.category]) {
       groupedSkills[skill.category] = [];
     }
     groupedSkills[skill.category].push(skill);
   });
 
+  
   return (
     <section
       id="skills"
-      className="relative flex min-h-screen flex-col justify-center px-6 py-12 md:px-24 bg-zinc-950 text-zinc-50 overflow-hidden"
+      className="relative flex min-h-screen flex-col justify-center px-6 py-12 md:px-24 bg-background text-foreground overflow-hidden"
     >
-      <div className="absolute top-1/3 right-1/4 -z-10 h-[300px] w-[300px] rounded-full bg-indigo-500/5 blur-[120px] pointer-events-none md:h-[500px] md:w-[500px]" />
+      <div className="absolute top-1/3 right-1/4 -z-10 h-[300px] w-[300px] rounded-full bg-gradient-end/5 blur-[120px] pointer-events-none md:h-[500px] md:w-[500px]" />
 
       <div className="w-full max-w-7xl">
         <motion.div
@@ -40,11 +43,11 @@ export default function Allskills() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="max-w-4xl space-y-6 mb-12"
         >
-          <h2 className="text-sm font-mono tracking-widest text-sky-400 uppercase md:text-base">
-            [ 02. Skills ]
+          <h2 className="text-sm font-mono tracking-widest text-primary uppercase md:text-base">
+            {sectionTag}
           </h2>
           <h3 className="text-4xl font-extrabold tracking-tight sm:text-6xl md:text-7xl leading-none">
-            Technical <span className="text-zinc-500 italic">arsenal</span>.
+            {titleSectionPrefix} <span className="text-muted-foreground italic">{titleSectionHighlight}.</span>
           </h3>
         </motion.div>
 
@@ -61,7 +64,7 @@ export default function Allskills() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: 'easeOut' }}
               >
-                <h4 className="text-xs font-mono text-zinc-500 uppercase mb-4 tracking-widest">
+                <h4 className="text-xs font-mono text-muted-foreground uppercase mb-4 tracking-widest">
                   {categoryLabels[category] || category}
                 </h4>
 
@@ -82,20 +85,20 @@ export default function Allskills() {
                         variants={fadeOnUp}
                         className={`flex flex-col items-center justify-center p-2 rounded-md border transition-all duration-200 ${
                           skill.isCore
-                            ? 'border-sky-500/50 bg-sky-500/10 hover:bg-sky-500/20 hover:border-sky-400/80'
-                            : 'border-zinc-800/80 bg-zinc-900/30 hover:border-zinc-700/80 hover:bg-zinc-900/50'
+                            ? 'border-primary/50 bg-primary/10 hover:bg-primary/20 hover:border-primary/80'
+                            : 'border-border bg-muted/30 hover:border-foreground/20 hover:bg-muted/50'
                         }`}
                       >
                         {IconComponent ? (
                           <IconComponent
                             className={`w-6 h-6 mb-1.5 flex-shrink-0 transition-colors ${
-                              skill.isCore ? 'text-sky-400' : 'text-zinc-400'
+                              skill.isCore ? 'text-primary' : 'text-muted-foreground'
                             }`}
                           />
                         ) : (
-                          <div className="w-6 h-6 mb-1.5 bg-zinc-800 rounded animate-pulse" />
+                          <div className="w-6 h-6 mb-1.5 bg-muted rounded animate-pulse" />
                         )}
-                        <p className="text-center font-medium text-xs leading-tight line-clamp-2 text-zinc-200">
+                        <p className="text-center font-medium text-xs leading-tight line-clamp-2 text-foreground">
                           {skill.name}
                         </p>
                       </motion.div>
