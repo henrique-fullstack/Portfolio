@@ -7,7 +7,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as SiIcons from 'react-icons/si';
 import { fadeOnUp, staggerContainer } from '@/lib/animations';
 
-const categoryOrder = ['backend', 'frontend', 'database', 'tool'];
+const categoryOrder = [ 'frontend', 'backend', 'database', 'tool'];
 const categoryLabels: Record<string, string> = {
   backend: 'Backend Development',
   frontend: 'Frontend Development',

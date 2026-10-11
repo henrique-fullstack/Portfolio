@@ -19,12 +19,12 @@ export const site: LandingPageConfig = {
         ]
     },
     hero: {
-        roleBadge: "[ FULLSTACK ENGINEER | NEST.JS, NEXT.JS & TYPESCRIPT ]",
-        heroHeadlinePrefix: "Building scalable systems and",
-        heroHeadlineHighlight1: "clean APIs",
+        roleBadge: "[ FRONTEND ENGINEER | NEXT.JS, REACT & TYPESCRIPT ]",
+        heroHeadlinePrefix: "Building high-performance interfaces and",
+        heroHeadlineHighlight1: "sleek web apps",
         heroHeadlineMiddle: "with",
-        heroHeadlineHighlight2: "modern fullstack architecture",
-        subdescription: "I bridge the gap between robust backend architecture and modern frontend engineering. Focused on building high-performance APIs, scalable database schemas, and interactive web applications using Nest.js, Next.js, and TypeScript.",
+        heroHeadlineHighlight2: "modern frontend architecture",
+        subdescription: "Frontend Engineer specializing in React, Next.js, and TypeScript. I craft responsive, accessible, and high-performance web applications with clean component architecture and seamless API integration, backed by a solid foundation in software engineering principles.",
         primaryCTA: "Projects",
         primaryCTAUrl: "#projects",
         secundaryCTA: "Contact",
@@ -34,9 +34,9 @@ export const site: LandingPageConfig = {
         sectionTag: "[ 01. Core ]",
         titleSectionPrefix: "Coding with",
         titleSectionHighlight: "purpose",
-        paragraph1: "My approach to software development is driven by a relentless pursuit of code quality and software engineering principles. I deep dive into clean code, modular architecture, and domain-driven design, understanding that a solid, well-structured foundation is non-negotiable for scaling modern applications.",
+        paragraph1: "My approach to frontend development is driven by a relentless pursuit of code quality and software engineering principles. I deep dive into clean code, component architecture, and type safety, understanding that a solid, well-structured foundation is non-negotiable for scaling modern web applications.",
         paragraph2Prefix: "Leveraging the synergy of",
-        paragraph2Suffix: ", I build robust fullstack applications where backend efficiency perfectly aligns with sleek component architecture. Focused on engineering scalable RESTful APIs, clean database structures, and high-performance interfaces.",
+        paragraph2Suffix: ", I build robust frontend applications where sleek component architecture perfectly aligns with efficient API integration. Focused on engineering scalable state management, clean component structures, and high-performance interfaces.",
         coreStacksTitle: "Core Stack"
     },
     skills: {
@@ -44,31 +44,33 @@ export const site: LandingPageConfig = {
         titleSectionPrefix: "Technical",
         titleSectionHighlight: "arsenal",
         skills: [
-            // Backend
-            { name: 'Python', icon: 'SiPython', isCore: false, category: 'backend' },
-            { name: 'FastAPI', icon: 'SiFastapi', isCore: false, category: 'backend' },
-            { name: 'Node.js', icon: 'SiNodedotjs', isCore: false, category: 'backend' },
-            { name: 'Express', icon: 'SiExpress', isCore: false, category: 'backend' },
-            { name: 'Nest.js', icon: 'SiNestjs', isCore: true, category: 'backend' }, 
-
-            // Frontend
+            // Frontend (Core Focus)
+            { name: 'TypeScript', icon: 'SiTypescript', isCore: true, category: 'frontend' },
+            { name: 'Next.js', icon: 'SiNextdotjs', isCore: true, category: 'frontend' },
+            { name: 'React', icon: 'SiReact', isCore: true, category: 'frontend' }, 
+            { name: 'Tailwind CSS', icon: 'SiTailwindcss', isCore: true, category: 'frontend' },
+            { name: 'Zod', icon: 'SiZod', isCore: false, category: 'frontend' },
+            { name: 'JavaScript', icon: 'SiJavascript', isCore: false, category: 'frontend' },
             { name: 'HTML', icon: 'SiHtml5', isCore: false, category: 'frontend' },
             { name: 'CSS', icon: 'SiCss', isCore: false, category: 'frontend' },
-            { name: 'JavaScript', icon: 'SiJavascript', isCore: false, category: 'frontend' },
-            { name: 'TypeScript', icon: 'SiTypescript', isCore: true, category: 'frontend' },
-            { name: 'Tailwind CSS', icon: 'SiTailwindcss', isCore: true, category: 'frontend' },
-            { name: 'React', icon: 'SiReact', isCore: false, category: 'frontend' }, 
-            { name: 'Next.js', icon: 'SiNextdotjs', isCore: true, category: 'frontend' },
+
+            // Backend & Integration (Differential)
+            { name: 'Nest.js', icon: 'SiNestjs', isCore: false, category: 'backend' }, 
+            { name: 'Node.js', icon: 'SiNodedotjs', isCore: false, category: 'backend' },
+            { name: 'Express', icon: 'SiExpress', isCore: false, category: 'backend' },
+            { name: 'FastAPI', icon: 'SiFastapi', isCore: false, category: 'backend' },
+            { name: 'Python', icon: 'SiPython', isCore: false, category: 'backend' },
 
             // Database
-            { name: 'SQLite', icon: 'SiSqlite', isCore: false, category: 'database' },
-            { name: 'PostgreSQL', icon: 'SiPostgresql', isCore: true, category: 'database' },
+            { name: 'Supabase', icon: 'SiSupabase', isCore: false, category: 'database' },
+            { name: 'PostgreSQL', icon: 'SiPostgresql', isCore: false, category: 'database' },
             { name: 'Prisma', icon: 'SiPrisma', isCore: false, category: 'database'},
+            { name: 'SQLite', icon: 'SiSqlite', isCore: false, category: 'database' },
 
-            // Tools
-            { name: 'Docker', icon: 'SiDocker', isCore: false, category: 'tool' },
+            // Tools & Workflow
             { name: 'Git', icon: 'SiGit', isCore: false, category: 'tool' },     
             { name: 'GitHub', icon: 'SiGithub', isCore: false, category: 'tool' },
+            { name: 'Docker', icon: 'SiDocker', isCore: false, category: 'tool' },
             { name: 'Linux (Ubuntu)', icon: 'FaLinux', isCore: false, category: 'tool'} 
         ]
     },
@@ -101,24 +103,24 @@ export const site: LandingPageConfig = {
                 status: 'COMPLETED'
             },
             {
+                titleProject: "Kaiser Finance Web",
+                description: "A responsive, type-safe financial web application built with Next.js App Router and Supabase. Features secure authentication, real-time data handling, and strict schema validation with Zod for tracking expenses and income.",
+                techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Zod"],
+                stackIcons: ["SiNextdotjs", "SiTypescript", "SiTailwindcss", "SiSupabase", "SiZod"],
+                githubText: "View GitHub",
+                githubUrl: "https://github.com/henrique-fullstack/kaiser-finance-web.git",
+                isFeatured: true,
+                status: 'IN PROGRESS'
+            },
+            {
                 titleProject: "Kaiser Finance Manager",
                 description: "A lightweight financial management desktop system focused on data persistence and privacy. Features automated expense tracking, income categorization, and local relational storage.",
                 techStack: ["Python", "SQLite"],
                 stackIcons: ["SiPython", "SiSqlite"],
                 githubText: "View GitHub",
                 githubUrl: "https://github.com/henrique-fullstack/Kaiser-finance-manager.git",
-                isFeatured: true,
+                isFeatured: false,
                 status: 'COMPLETED'
-            },
-            {
-                titleProject: "Kaiser Finance API",
-                description: "A modular RESTful API for financial management, engineered with Nest.js and PostgreSQL. Designed with clean architecture, Docker containerization, Prisma ORM, and environment isolation for high scalability.",
-                techStack: ["Nest.js", "TypeScript", "PostgreSQL", "Prisma", "Docker"],
-                stackIcons: ["SiNestjs", "SiTypescript", "SiPostgresql", "SiPrisma", "SiDocker"],
-                githubText: "View GitHub",
-                githubUrl: "https://github.com/henrique-fullstack/kaiser-finance-api.git",
-                isFeatured: true,
-                status: 'IN PROGRESS'
             }
         ]
     },
