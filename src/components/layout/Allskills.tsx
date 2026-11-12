@@ -7,19 +7,21 @@ import * as FaIcons from 'react-icons/fa';
 import * as SiIcons from 'react-icons/si';
 import { fadeOnUp, staggerContainer } from '@/lib/animations';
 
-const categoryOrder = [ 'frontend', 'backend', 'database', 'tool'];
+const icons = { ...SiIcons, ...FaIcons } as Record<string, React.ComponentType<{ className?: string }>>;
+
+const categoryOrder = ['backend', 'frontend', 'database', 'tool'];
 const categoryLabels: Record<string, string> = {
   backend: 'Backend Development',
-  frontend: 'Frontend Development',
-  database: 'Database',
-  tool: 'Development Tools',
+  frontend: 'Frontend & Integration',
+  database: 'Databases & Storage',
+  tool: 'Development Tools & Environment',
 };
 
 export default function Allskills() {
   const { sectionTag, titleSectionPrefix, titleSectionHighlight, skills } = site.skills;
-  const groupedSkills: Record<string, Skill[]> = {};
-  const icons = { ...SiIcons, ...FaIcons } as Record<string, React.ComponentType<{ className?: string }>>;
 
+  // Group all skills by their category
+  const groupedSkills: Record<string, Skill[]> = {};
   skills.forEach((skill) => {
     if (!groupedSkills[skill.category]) {
       groupedSkills[skill.category] = [];
@@ -27,7 +29,6 @@ export default function Allskills() {
     groupedSkills[skill.category].push(skill);
   });
 
-  
   return (
     <section
       id="skills"
@@ -51,7 +52,8 @@ export default function Allskills() {
           </h3>
         </motion.div>
 
-        <div className="space-y-8">
+        {/* Categories loop with uniform row-style cards */}
+        <div className="space-y-10">
           {categoryOrder.map((category) => {
             const categorySkills = groupedSkills[category] || [];
             if (categorySkills.length === 0) return null;
@@ -69,36 +71,35 @@ export default function Allskills() {
                 </h4>
 
                 <motion.div
-                  className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-2"
+                  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
                   variants={staggerContainer}
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true, amount: 0.3 }}
                 >
                   {categorySkills.map((skill) => {
-                    // Maps the skill icon name to the actual icon component from react-icons
                     const IconComponent = skill.icon ? icons[skill.icon] : null;
 
                     return (
                       <motion.div
                         key={skill.name}
                         variants={fadeOnUp}
-                        className={`flex flex-col items-center justify-center p-2 rounded-md border transition-all duration-200 ${
+                        className={`flex items-center gap-4 p-4 rounded-lg border transition-all duration-200 shadow-sm ${
                           skill.isCore
-                            ? 'border-primary/50 bg-primary/10 hover:bg-primary/20 hover:border-primary/80'
+                            ? 'border-primary/50 bg-primary/10 hover:bg-primary/15 hover:border-primary/80'
                             : 'border-border bg-muted/30 hover:border-foreground/20 hover:bg-muted/50'
                         }`}
                       >
                         {IconComponent ? (
                           <IconComponent
-                            className={`w-6 h-6 mb-1.5 flex-shrink-0 transition-colors ${
+                            className={`w-7 h-7 flex-shrink-0 ${
                               skill.isCore ? 'text-primary' : 'text-muted-foreground'
                             }`}
                           />
                         ) : (
-                          <div className="w-6 h-6 mb-1.5 bg-muted rounded animate-pulse" />
+                          <div className="w-7 h-7 bg-muted rounded animate-pulse" />
                         )}
-                        <p className="text-center font-medium text-xs leading-tight line-clamp-2 text-foreground">
+                        <p className="font-semibold text-sm text-foreground">
                           {skill.name}
                         </p>
                       </motion.div>

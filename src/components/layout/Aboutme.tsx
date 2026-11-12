@@ -7,6 +7,7 @@ import { site } from '@/config/site';
  * 
  * Provides a detailed overview of the developer's approach to software development, emphasizing code quality, modularity, and the core technologies used.
  * Utilizes subtle animations to enhance readability and engagement without overwhelming the user.
+ * The core stacks are dynamically extracted from the site configuration to ensure consistency across the site.
  */
 
 export default function About() {
