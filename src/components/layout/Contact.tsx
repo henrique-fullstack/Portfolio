@@ -22,7 +22,7 @@ export default function Contacts() {
   const titleHighlight = lastSpaceIndex === -1 ? '' : cleanTitle.slice(lastSpaceIndex + 1);
 
   return (
-    <section id="contact" className="relative flex min-h-[70vh] flex-col justify-center px-6 py-12 md:px-24 bg-background text-foreground overflow-hidden">
+    <section id="contact" className="relative flex min-h-screen flex-col justify-center px-6 py-12 md:px-24 bg-background text-foreground overflow-hidden">
       {/* Soft Background Light */}
       <div className="absolute top-1/3 left-1/4 -z-10 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[120px] pointer-events-none md:h-[500px] md:w-[500px]" />
 

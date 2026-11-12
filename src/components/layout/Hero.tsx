@@ -123,7 +123,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none"
       >
         <span className="text-xs font-mono tracking-widest uppercase">Scroll</span>
         <div className="h-12 w-[1px] bg-gradient-to-b from-foreground to-transparent animate-pulse" />
